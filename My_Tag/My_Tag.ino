@@ -64,7 +64,7 @@ String LoRaData;
 #define MODE_WIFI 2
 #define MODE_LORA  3
 
-int mode = MODE_WIFI;  // Change this to select mode
+int mode = MODE_BLE;  // Change this to select mode
 
 int counter=0; // count the number of results
 
@@ -81,12 +81,12 @@ class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
   void onResult(BLEAdvertisedDevice advertisedDevice) {
    // Serial.printf("Advertised Device: %s \n", advertisedDevice.toString().c_str());
 
-    if((advertisedDevice.getName() == "ONE"  || advertisedDevice.getName() == "TWO" || advertisedDevice.getName() == "THREE") && counter<121){
+    if((advertisedDevice.getName() == "ONE"  || advertisedDevice.getName() == "TWO" || advertisedDevice.getName() == "THREE") && counter<56){
           int rssi = advertisedDevice.getRSSI();
 
         //Serial.printf("Advertised Device: %s \n", advertisedDevice.toString().c_str());
                 if(advertisedDevice.getName() == "ONE" && ONE_received==false){
-                  ONE_received=true;
+                 // ONE_received=true;
                   ONE_rssi=advertisedDevice.getRSSI();     
                   //Serial.print("ONE:");
                  // Serial.print(ONE_rssi);
@@ -102,7 +102,7 @@ class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
                  // Serial.print(THREE_rssi);
                   }
 
-                if(ONE_received==true && TWO_received==true && THREE_received==true){
+              //  if(ONE_received==true){// && TWO_received==true && THREE_received==true){
                 ONE_received=false;
                 TWO_received=false;
                 THREE_received=false;
@@ -111,12 +111,12 @@ class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
                 Serial.print(",");
                 Serial.print("ONE,");
                 Serial.print(ONE_rssi);
-                Serial.print(",TWO,");
-                Serial.print(TWO_rssi);
-                Serial.print(",THREE,");
-                Serial.print(THREE_rssi);
+              //  Serial.print(",TWO,");
+               // Serial.print(TWO_rssi);
+               // Serial.print(",THREE,");
+               // Serial.print(THREE_rssi);
                 counter++;
-                }
+               // }
 
                 // Display information
                   display.clearDisplay();
