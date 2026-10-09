@@ -1,0 +1,7 @@
+cmd I was using:
+				arduino-cli monitor -p /dev/ttyACM0 --config baudrate=115200  | tee ../lilyGo/main/Lora_experiments/WIFI_DATA/rssi_data_02.csv
+
+arduino-cli is a arch pkg Is not bundled with the arduino gui likely, I installed it from an arch pkg manager, but any program that reads serial terminal data will work.
+tee is a linux cmd that simply pipes the output to both stdin and a file.
+
+also note that there will be all logs from the esp so I trim the files quickly with vim.
