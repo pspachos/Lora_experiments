@@ -64,7 +64,7 @@ String LoRaData;
 #define MODE_WIFI 2
 #define MODE_LORA  3
 
-int mode = MODE_LORA;  // Change this to select mode
+int mode = MODE_WIFI;  // Change this to select mode
 
 int counter=0; // count the number of results
 
