@@ -13,7 +13,7 @@ int scanTime = 1; // in seconds
 BLEScan* pBLEScan;
 
 //define names for WIFI
-#define MAX_SAMPLES 51
+#define MAX_SAMPLES 55
 
 volatile int sampleCount = 0;
 bool collectionDone = false;
@@ -64,7 +64,7 @@ String LoRaData;
 #define MODE_WIFI 2
 #define MODE_LORA  3
 
-int mode = MODE_BLE;  // Change this to select mode
+int mode = MODE_LORA;  // Change this to select mode
 
 int counter=0; // count the number of results
 

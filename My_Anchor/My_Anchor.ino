@@ -55,7 +55,7 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RST);
 #define MODE_WIFI 2
 #define MODE_LORA  3
 
-int mode = MODE_WIFI;  // Change this to select mode
+int mode = MODE_LORA;  // Change this to select mode
 
 void setup() {
   //initialize Serial Monitor
